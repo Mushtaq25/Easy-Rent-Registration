@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">easy rent registration</string>
+    <string-array name="PG_type">
+        <item>Girls paying guest</item>
+        <item>Boys paying guest</item>
+    </string-array>
 </resources>

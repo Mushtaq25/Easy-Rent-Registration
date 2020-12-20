@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
                 /* Create an Intent that will start the Menu-Activity. */
                 Intent mainIntent = new Intent(MainActivity.this,login.class);
                 startActivity(mainIntent);
+                overridePendingTransition(R.anim.silde_in_right, R.anim.slide_out_left);
                 finish();
             }
         }, SPLASH_DISPLAY_LENGTH);

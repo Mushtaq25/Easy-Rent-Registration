@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "432905947208",
+    "project_id": "easy-rent-30cb8",
+    "storage_bucket": "easy-rent-30cb8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432905947208:android:fe49c86257728387f4b07d",
+        "android_client_info": {
+          "package_name": "com.example.easyrent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432905947208-sn46c8hnh2682mj1bvcsko08rmmhl35j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1MmPJCs4Z8FTkb2bdpbPaW0fEbWBZVCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432905947208-sn46c8hnh2682mj1bvcsko08rmmhl35j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432905947208:android:2d93fbe7987bd8b2f4b07d",
+        "android_client_info": {
+          "package_name": "com.example.easyrentregistration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432905947208-sn46c8hnh2682mj1bvcsko08rmmhl35j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1MmPJCs4Z8FTkb2bdpbPaW0fEbWBZVCc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432905947208-sn46c8hnh2682mj1bvcsko08rmmhl35j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
