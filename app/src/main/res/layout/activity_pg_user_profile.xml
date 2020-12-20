@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pg_user_profile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical|start|top">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="7dp"
+                app:contentPadding="4dp"
+                app:cardCornerRadius="3dp"
+                android:layout_margin="5dp"
+                android:background="@color/light_grey">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_house_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:src="@drawable/ic_exclamation_mark_inside_a_circle"/>
+
+                    <Button
+                        android:id="@+id/btn_upload_house_image"
+                        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/iv_house_image"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:backgroundTint="@color/light_sky_blue"
+                        android:text="upload House Photo"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:elevation="8dp"
+                        />
+                    <Button
+                        android:id="@+id/btn_delete_house_image"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btn_upload_house_image"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:backgroundTint="@color/light_sky_blue"
+                        android:text="Delete"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:elevation="8dp"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="7dp"
+                app:contentPadding="4dp"
+                app:cardCornerRadius="3dp"
+                android:layout_margin="5dp"
+                android:background="@color/light_grey">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tv_house_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="House Name"
+                        android:textSize="24dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/tv_owner_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Owner Name"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"/>
+                    <TextView
+                        android:id="@+id/tv_owner_contact_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Owner contact number"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"/>
+                    <TextView
+                        android:id="@+id/tv_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="house type"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"/>
+                    <TextView
+                        android:id="@+id/tv_breakfast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Breakfast"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"/>
+                    <TextView
+                        android:id="@+id/tv_lunch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lunch"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"/>
+                    <TextView
+                        android:id="@+id/tv_dinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Dinner"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"/>
+
+                    <Button
+                        android:id="@+id/btn_edit_PG_user_details"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btn_upload_house_image"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:backgroundTint="@color/light_sky_blue"
+                        android:text="Edit details"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:elevation="8dp"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
