@@ -24,6 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.storage.FirebaseStorage;
@@ -47,6 +48,19 @@ public class create_new_user extends AppCompatActivity {
     ProgressBar creating_progressbar;
     private FirebaseAuth mAuth;
     FirebaseFirestore fstore ;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+            sv_email_password = findViewById(R.id.sv_email_password);
+            sv_email_password.setVisibility(View.GONE);
+            sv_house_type.setVisibility(View.VISIBLE);
+
+        }
+    }
+
     private StorageReference mStore;
 
     @Override
@@ -193,6 +207,18 @@ public class create_new_user extends AppCompatActivity {
                                 sv_email_password.setVisibility(View.GONE);
                                 creating_progressbar.setVisibility(View.GONE);
                                 sv_house_type.setVisibility(View.VISIBLE);
+
+                                mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(create_new_user.this, "Email Sent", Toast.LENGTH_SHORT).show();
+                                        }
+                                        else {
+                                            Toast.makeText(create_new_user.this, "Provide valid email address", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
                             }
                             else {
                                  creating_progressbar.setVisibility(View.GONE);
