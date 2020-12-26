@@ -265,7 +265,7 @@ public class create_new_user extends AppCompatActivity {
                         }
                     });
 
-                    fstore.collection("Pg_Owner_Details").document(mAuth.getCurrentUser().getEmail())
+                    fstore.collection("Owner_Details").document(mAuth.getCurrentUser().getEmail())
                             .set(user, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
@@ -296,7 +296,7 @@ public class create_new_user extends AppCompatActivity {
                         }
                     });
 
-                    fstore.collection("House_Owner_Details").document(mAuth.getCurrentUser().getEmail())
+                    fstore.collection("Owner_Details").document(mAuth.getCurrentUser().getEmail())
                             .set(user, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
@@ -329,7 +329,7 @@ public class create_new_user extends AppCompatActivity {
                 String dinner_item = PG_Dinner_item_new_user.getEditText().getText().toString();
 
                 Map<String, Object> user = new HashMap<>();
-                user.put("PG_type-",PG_type );
+                user.put("House_Type-",PG_type );
                 user.put("Type_of_food",Type_of_food);
                 user.put("breakfast_item",breakfast_item);
                 user.put("lunch_item",lunch_item);
@@ -343,7 +343,7 @@ public class create_new_user extends AppCompatActivity {
                     }
                 });
 
-                fstore.collection("Pg_Owner_Details").document(mAuth.getCurrentUser().getEmail())
+                fstore.collection("Owner_Details").document(mAuth.getCurrentUser().getEmail())
                         .set(user, SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -368,12 +368,13 @@ public class create_new_user extends AppCompatActivity {
                 String Owner_full_name = PG_owner_name_new_user.getEditText().getText().toString();
                 String PG_contact_number = PG_contact_number_new_user.getEditText().getText().toString();
                 String user_Id = mAuth.getCurrentUser().getUid();
+                String custom_user_ID = "P" + user_Id;
 
                 Map<String, Object> user = new HashMap<>();
                 user.put("PG_Name-",PG_name );
                 user.put("Owner_full_name",Owner_full_name);
                 user.put("PG_contact_number",PG_contact_number);
-                user.put("user_Id",user_Id);
+                user.put("user_Id",custom_user_ID);
 
                 fstore.collection("Market").document(mAuth.getCurrentUser().getUid())
                         .set(user,SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -383,7 +384,7 @@ public class create_new_user extends AppCompatActivity {
                     }
                 });
 
-                fstore.collection("Pg_Owner_Details").document(mAuth.getCurrentUser().getEmail())
+                fstore.collection("Owner_Details").document(mAuth.getCurrentUser().getEmail())
                         .set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -435,7 +436,7 @@ public class create_new_user extends AppCompatActivity {
                     }
                 });
 
-                fstore.collection("House_Owner_Details").document(mAuth.getCurrentUser().getEmail())
+                fstore.collection("Owner_Details").document(mAuth.getCurrentUser().getEmail())
                         .set(user,SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -461,12 +462,14 @@ public class create_new_user extends AppCompatActivity {
                 String Owner_full_name = House_owner_name_new_user.getEditText().getText().toString();
                 String PG_contact_number = House_contact_number_new_user.getEditText().getText().toString();
                 String user_Id = mAuth.getCurrentUser().getUid();
+                String custom_user_ID = "H" + user_Id;
 
                 Map<String, Object> user = new HashMap<>();
                 user.put("House_Name-",House_name );
                 user.put("Owner_full_name",Owner_full_name);
                 user.put("House_contact_number",PG_contact_number);
-                user.put("user_Id",user_Id);
+                user.put("user_Id",custom_user_ID);
+
 
                 fstore.collection("Market").document(mAuth.getCurrentUser().getUid())
                         .set(user,SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -476,7 +479,7 @@ public class create_new_user extends AppCompatActivity {
                     }
                 });
 
-                fstore.collection("House_Owner_Details").document(mAuth.getCurrentUser().getEmail())
+                fstore.collection("Owner_Details").document(mAuth.getCurrentUser().getEmail())
                         .set(user,SetOptions.merge()).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {

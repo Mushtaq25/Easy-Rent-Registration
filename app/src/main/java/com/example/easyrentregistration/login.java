@@ -82,7 +82,11 @@ public class login extends AppCompatActivity {
         super.onStart();
         FirebaseUser user = mauth.getCurrentUser();
         if(user != null){
-            startActivity(new Intent(login.this,pg_user_profile.class));
+            startActivity(new Intent(login.this,House_user_profile.class));
+            finish();
+        }
+        else {
+            Toast.makeText(this, "empty user", Toast.LENGTH_SHORT).show();
         }
     }
     @Override
@@ -129,7 +133,7 @@ public class login extends AppCompatActivity {
                         @Override
                         public void onSuccess(AuthResult authResult) {
                             if(mauth.getCurrentUser().isEmailVerified()){
-                                Intent i = new Intent(login.this,pg_user_profile.class);
+                                Intent i = new Intent(login.this,House_user_profile.class);
                                 startActivity(i);
                                 finish();
                             }
@@ -170,9 +174,6 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                /*
-
-                 */
                     Intent signInIntent = mGoogleSignInClient.getSignInIntent();
                     startActivityForResult(signInIntent, 1000);
             }
@@ -197,7 +198,7 @@ public class login extends AppCompatActivity {
 
                             } else {
                                 // This is an existing user, show them a welcome back screen.
-                                Intent i = new Intent(login.this, pg_user_profile.class);
+                                Intent i = new Intent(login.this, House_user_profile.class);
                                 startActivity(i);
                             }
 
@@ -212,7 +213,7 @@ public class login extends AppCompatActivity {
     private void google_signIn_for_newUser() {
         AlertDialog.Builder builder = new AlertDialog.Builder(login.this)
                 .setTitle("Donot Press Back While Submitting The Form")
-                .setMessage("Press Ok to Create Your account");
+                .setMessage("Press Ok to Create Your New account");
         builder.setPositiveButton("create account", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
